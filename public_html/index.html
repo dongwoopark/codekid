@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery example: drag and drop</title>
+        <style>
+            body {
+                font-size: 32px;
+            }
+            
+            #dropzone {
+                top: 150px;
+                width: 100px;
+                height: 100px;
+                background: white;
+                border: solid 4px;
+            }
+            
+       
+        </style>
+    </head>
+    <body>
+    <div>Drag yellow guy into the correct dropzone!</div>
+    <img id="winston" src="https://www.kasandbox.org/programming-images/creatures/Winston.png">
+    
+ 
+         <img src="../picture/puzzle_piece.png" alt="ddd"/>
+         <img src="../picture/Untitled.png" alt="dddd"/>
+         <img src="../picture/sojuba image.jpg" alt=""/>
+    
+        <div id ="circlezone"><svg height="200" width="200">
+  <circle cx="100" cy="100" r="63" stroke="black" stroke-width="3" fill="white" />
+</svg></div>
+    <div id="dropzone"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Also include jQueryUI -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script>
+        $("#winston").draggable();
+        $("#dropzone").droppable({
+            drop: function(event, ui) {
+                $(this).css('background', 'white');
+            },
+            over: function(event, ui) {
+                $(this).css('background', 'RED');
+            },
+            out: function(event, ui) {
+                $(this).css('background', 'white');
+            }
+           
+            
+        }
+            );
+      $("circlezone").droppable({
+            drop: function(event, ui) {
+                $(this).css('background', 'white');
+            },
+            over: function(event, ui) {
+                $(this).css('background', 'RED');
+            },
+               out: function(event, ui) {
+                $(this).css('background', 'white');
+      }});
+    </script>
+    
+    </body>
+</html>
